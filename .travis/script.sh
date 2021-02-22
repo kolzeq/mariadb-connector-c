@@ -101,7 +101,7 @@ else
 fi
 
 #build C connector
-cmake -DCMAKE_BUILD_TYPE=RelWithDebInfo -DWITH_SSL=OPENSSL -DCERT_PATH=${SSLCERT}
+cmake -DCOVERALLS=ON -DCMAKE_BUILD_TYPE=RelWithDebInfo -DWITH_SSL=OPENSSL -DCERT_PATH=${SSLCERT}
 make
 
 ## list ciphers
