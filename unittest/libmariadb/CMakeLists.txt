@@ -22,7 +22,7 @@ ENABLE_TESTING()
 INCLUDE(${CC_SOURCE_DIR}/cmake/CodeCoverage.cmake)
 append_coverage_compiler_flags()
 
-setup_target_for_coverage_gcovr_html(
+setup_target_for_coverage_lcov(
    NAME coverage
    EXECUTABLE ctest
    BASE_DIRECTORY "${CC_SOURCE_DIR}/unittest")
