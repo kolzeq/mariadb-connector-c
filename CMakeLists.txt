@@ -129,7 +129,7 @@ SET(CMAKE_CXX_FLAGS_RELWITHDEBINFO "${CMAKE_CXX_FLAGS_RELWITHDEBINFO} -DDBUG_OFF
 IF(CMAKE_COMPILER_IS_GNUCC)
   INCLUDE(CheckCCompilerFlag)
   IF(COVERAGE)
-      INCLUDE(CodeCoverage)
+      INCLUDE(${CC_SOURCE_DIR}/cmake/CodeCoverage.cmake)
       append_coverage_compiler_flags()
   ENDIF()
 
