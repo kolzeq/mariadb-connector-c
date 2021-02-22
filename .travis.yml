@@ -22,8 +22,7 @@ before_install:
   - .travis/gen-ssl.sh mariadb.example.com tmp
   - export SSLCERT=$PROJ_PATH/tmp
   - CODECOV_TOKEN='873eb8a5-f9f5-44e7-a13d-fcb2df76aedf'
-  - sudo apt update
-  - sudo apt install gcovr
+  - sudo pip3 install gcovr
 
 matrix:
   allow_failures:
