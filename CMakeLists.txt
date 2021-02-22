@@ -131,6 +131,7 @@ IF(CMAKE_COMPILER_IS_GNUCC)
   IF(COVERAGE)
       INCLUDE(${CC_SOURCE_DIR}/cmake/CodeCoverage.cmake)
       append_coverage_compiler_flags()
+      setup_target_for_coverage(cc_coverage ctest coverage)
   ENDIF()
 
   SET(GCC_FLAGS -Wunused -Wlogical-op -Wno-uninitialized  -Wall -Wextra -Wformat-security -Wno-init-self -Wwrite-strings -Wshift-count-overflow -Wdeclaration-after-statement -Wno-undef -Wno-unknown-pragmas)
