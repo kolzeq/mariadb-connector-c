@@ -128,15 +128,13 @@ SET(CMAKE_CXX_FLAGS_RELWITHDEBINFO "${CMAKE_CXX_FLAGS_RELWITHDEBINFO} -DDBUG_OFF
 
 IF(CMAKE_COMPILER_IS_GNUCC)
   INCLUDE(CheckCCompilerFlag)
-  IF(COVERAGE)
-      INCLUDE(${CC_SOURCE_DIR}/cmake/CodeCoverage.cmake)
-      append_coverage_compiler_flags()
-      setup_target_for_coverage(cc_coverage ctest coverage)
-      SETUP_TARGET_FOR_COVERAGE_LCOV(
-              NAME coverage
-              EXECUTABLE ctest
-              DEPENDENCIES *)
-  ENDIF()
+  INCLUDE(${CC_SOURCE_DIR}/cmake/CodeCoverage.cmake)
+  append_coverage_compiler_flags()
+  setup_target_for_coverage(cc_coverage ctest coverage)
+  SETUP_TARGET_FOR_COVERAGE_LCOV(
+          NAME coverage
+          EXECUTABLE ctest
+          DEPENDENCIES *)
 
   SET(GCC_FLAGS -Wunused -Wlogical-op -Wno-uninitialized  -Wall -Wextra -Wformat-security -Wno-init-self -Wwrite-strings -Wshift-count-overflow -Wdeclaration-after-statement -Wno-undef -Wno-unknown-pragmas)
   FOREACH(GCC_FLAG ${GCC_FLAGS})
