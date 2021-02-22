@@ -39,6 +39,8 @@ matrix:
 #    - env: DB=mariadb:10.4
     - env: DB=mariadb:10.5
       compiler: gcc
+    - env: DB=mariadb:10.5
+      compiler: clang
 #    - env: DB=mariadb:10.5 MAXSCALE_VERSION=2.5.3 MAXSCALE_TEST_DISABLE=true
 #    - env: SERVER_BRANCH=10.2
 #    - env: SERVER_BRANCH=10.2 TEST_OPTION=--ps-protocol
