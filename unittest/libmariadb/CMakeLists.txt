@@ -21,11 +21,7 @@ ENABLE_TESTING()
 
 INCLUDE(${CC_SOURCE_DIR}/cmake/CodeCoverage.cmake)
 append_coverage_compiler_flags()
-setup_target_for_coverage(cc_coverage ctest coverage)
-SETUP_TARGET_FOR_COVERAGE_LCOV(
-      NAME coverage
-      EXECUTABLE ctest
-      DEPENDENCIES *)
+
 setup_target_for_coverage_gcovr_html(
    NAME coverage
    EXECUTABLE ctest
