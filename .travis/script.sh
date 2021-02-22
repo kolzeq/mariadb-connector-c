@@ -104,7 +104,7 @@ fi
 #build C connector
 cmake -DCOVERAGE=ON -DCMAKE_BUILD_TYPE=RelWithDebInfo -DWITH_SSL=OPENSSL -DCERT_PATH=${SSLCERT}
 make
-make cc_coverage
+make coverage
 ## list ciphers
 openssl ciphers -v
 
