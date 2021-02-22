@@ -100,8 +100,9 @@ else
 
 fi
 
+
 #build C connector
-cmake -DCOVERALLS=ON -DCMAKE_BUILD_TYPE=RelWithDebInfo -DWITH_SSL=OPENSSL -DCERT_PATH=${SSLCERT} -fprofile-arcs -ftest-coverage
+cmake -DCOVERAGE=ON -DCMAKE_BUILD_TYPE=RelWithDebInfo -DWITH_SSL=OPENSSL -DCERT_PATH=${SSLCERT}
 make
 
 ## list ciphers

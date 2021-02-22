@@ -128,6 +128,11 @@ SET(CMAKE_CXX_FLAGS_RELWITHDEBINFO "${CMAKE_CXX_FLAGS_RELWITHDEBINFO} -DDBUG_OFF
 
 IF(CMAKE_COMPILER_IS_GNUCC)
   INCLUDE(CheckCCompilerFlag)
+  IF(COVERAGE)
+      INCLUDE(CodeCoverage)
+      append_coverage_compiler_flags()
+  ENDIF()
+
   SET(GCC_FLAGS -Wunused -Wlogical-op -Wno-uninitialized  -Wall -Wextra -Wformat-security -Wno-init-self -Wwrite-strings -Wshift-count-overflow -Wdeclaration-after-statement -Wno-undef -Wno-unknown-pragmas)
   FOREACH(GCC_FLAG ${GCC_FLAGS})
     CHECK_C_COMPILER_FLAG("${GCC_FLAG}" HAS_${GCC_FLAG}_FLAG)
