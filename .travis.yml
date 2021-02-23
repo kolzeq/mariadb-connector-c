@@ -25,7 +25,8 @@ before_install:
   - sudo apt update
   - sudo apt install lcov
   - gcov --version
-  - pip3 install -U gcovr gcov
+  - pip install gcovr
+  - gcovr -v
 
 jobs:
   allow_failures:
