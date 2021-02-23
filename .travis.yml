@@ -23,7 +23,7 @@ before_install:
   - export SSLCERT=$PROJ_PATH/tmp
   - CODECOV_TOKEN='873eb8a5-f9f5-44e7-a13d-fcb2df76aedf'
   - sudo apt update
-  - sudo apt install gcov
+  - sudo apt install clang lcov
   - gcov --version
   - gcc -v
 
