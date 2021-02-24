@@ -19,14 +19,14 @@ ENDIF()
 
 ENABLE_TESTING()
 
-#set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -fprofile-arcs -ftest-coverage -g -O0" PARENT_SCOPE)
-INCLUDE(${CC_SOURCE_DIR}/cmake/CodeCoverage.cmake)
-append_coverage_compiler_flags()
+set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -fprofile-arcs -ftest-coverage -g -O0" PARENT_SCOPE)
+#INCLUDE(${CC_SOURCE_DIR}/cmake/CodeCoverage.cmake)
+#append_coverage_compiler_flags()
 
-setup_target_for_coverage_gcovr_html(
-   NAME coverage
-   EXECUTABLE ctest
-   BASE_DIRECTORY "${CC_SOURCE_DIR}")
+#setup_target_for_coverage_gcovr_html(
+#   NAME coverage
+#   EXECUTABLE ctest
+#   BASE_DIRECTORY "${CC_SOURCE_DIR}")
 
 INCLUDE_DIRECTORIES(${CC_SOURCE_DIR}/include
                     ${CC_BINARY_DIR}/include

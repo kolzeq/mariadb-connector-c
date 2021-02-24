@@ -115,5 +115,5 @@ echo "Running tests"
 
 cd unittest/libmariadb
 
-ctest -V
+ctest -V -D
 
