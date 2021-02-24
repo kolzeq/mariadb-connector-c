@@ -23,8 +23,8 @@ before_install:
   - export SSLCERT=$PROJ_PATH/tmp
   - CODECOV_TOKEN='873eb8a5-f9f5-44e7-a13d-fcb2df76aedf'
   - sudo apt update
-  - sudo apt install lcov llvm-9
-  - sudo apt-get install clang
+#  - sudo apt install lcov llvm-9
+#  - sudo apt-get install clang
   - gcov --version
   - pip install gcovr
   - gcovr -v
