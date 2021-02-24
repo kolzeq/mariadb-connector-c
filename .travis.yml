@@ -24,7 +24,7 @@ before_install:
   - CODECOV_TOKEN='873eb8a5-f9f5-44e7-a13d-fcb2df76aedf'
   - sudo apt update
   - sudo apt install lcov
-  - sudo apt-get install --only-upgrade clang
+  - sudo apt-get install clang
   - gcov --version
   - pip install gcovr
   - gcovr -v
