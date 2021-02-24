@@ -19,7 +19,7 @@ ENDIF()
 
 ENABLE_TESTING()
 
-set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -fprofile-arcs -ftest-coverage -g -O0" PARENT_SCOPE)
+set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -fprofile-arcs --coverage -fprofile-instr-generate -fcoverage-mapping -g -O0" PARENT_SCOPE)
 #INCLUDE(${CC_SOURCE_DIR}/cmake/CodeCoverage.cmake)
 #append_coverage_compiler_flags()
 
