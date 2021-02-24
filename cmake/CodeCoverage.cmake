@@ -144,14 +144,14 @@ if("${CMAKE_${LANG}_COMPILER_ID}" MATCHES "(Apple)?[Cc]lang")
     if("${CMAKE_${LANG}_COMPILER_VERSION}" VERSION_LESS 3)
         message(FATAL_ERROR "Clang version must be 3.0.0 or greater! Aborting...")
     endif()
-elseif(NOT CMAKE_COMPILER_IS_GNUCXX)
-    if("${CMAKE_Fortran_COMPILER_ID}" MATCHES "[Ff]lang")
-        # Do nothing; exit conditional without error if true
-    elseif("${CMAKE_Fortran_COMPILER_ID}" MATCHES "GNU")
-        # Do nothing; exit conditional without error if true
-    else()
-        message(FATAL_ERROR "Compiler is not GNU gcc! Aborting...")
-    endif()
+#elseif(NOT CMAKE_COMPILER_IS_GNUCXX)
+#    if("${CMAKE_Fortran_COMPILER_ID}" MATCHES "[Ff]lang")
+#        # Do nothing; exit conditional without error if true
+#    elseif("${CMAKE_Fortran_COMPILER_ID}" MATCHES "GNU")
+#        # Do nothing; exit conditional without error if true
+#    else()
+#       message(FATAL_ERROR "Compiler is not GNU gcc! Aborting...")
+#    endif()
 endif()
 
 set(COVERAGE_COMPILER_FLAGS "-g -fprofile-arcs -ftest-coverage"
@@ -663,7 +663,7 @@ function(setup_target_for_coverage_fastcov)
         COMMENT "Resetting code coverage counters to zero. Processing code coverage counters and generating report."
     )
 
-    set(INFO_MSG "fastcov code coverage info report saved in ${Coverage_NAME}.info.")
+    set(INFO_MSG "fastcov code coverage info repsetup_target_for_coverage_lcovort saved in ${Coverage_NAME}.info.")
     if(NOT Coverage_SKIP_HTML)
         string(APPEND INFO_MSG " Open ${PROJECT_BINARY_DIR}/${Coverage_NAME}/index.html in your browser to view the coverage report.")
     endif()
